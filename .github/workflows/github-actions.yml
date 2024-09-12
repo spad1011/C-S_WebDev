@@ -1,4 +1,4 @@
-name: CI for the second SWE project.
+name: CI for the first C/S WebDev
 on: [ push ]
 jobs:
   build:
