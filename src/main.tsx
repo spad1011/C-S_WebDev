@@ -6,9 +6,11 @@ import App from './App.tsx';
 import './index.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { Game } from './pages/game.tsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const router = createBrowserRouter([
   {
-    path: paths.root,
+    path: '/',
     element: <App />,
     errorElement: <ErrorDetails/>
   },

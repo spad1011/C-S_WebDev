@@ -1,0 +1,38 @@
+@import '../../global.scss';
+
+.custom-navbar {
+    width: 100%;
+    position: relative;
+    .nav-link.active,
+    .navbar-brand,
+    .nav-link,
+    .navbar-toggler-icon {
+        color: $white;
+
+        &:hover,
+        &:focus {
+            // Farbe beim Hover und Focus
+            color: $blue-400; // Blue 400 von Figma
+        }
+
+        &:active {
+            color: $orange-400;
+        }
+    }
+}
+
+body[data-bs-theme='dark'] .custom-navbar{
+    color: $white
+}
+
+body:not([data-bs-theme='dark']) .custom-navbar {
+    color: $black;
+    background-color: $blue-900;
+
+    .navbar-toggler-icon {
+        filter: invert(100%);
+    }
+    .custom-navbar .nav-dropdown .dropdown-item {
+        color: $white;
+    }
+}

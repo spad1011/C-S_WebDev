@@ -24,10 +24,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  min-width: 100%; /* Full width */
+  min-height: 100vh; /* Full height */
+  display: block; /* Change display type */
+}
+
+#root {
+  width: 100%; /* Ensure #root spans full width */
+  height: 100%; /* Optional for full height */
 }
 
 h1 {
@@ -54,7 +58,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
     background-color: #ffffff;
