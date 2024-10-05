@@ -1,15 +1,27 @@
 import './App.scss'
-import { Link } from 'react-router-dom'
-import { paths } from './config/paths'
-import { NavBar } from './components/NavBar/NavBar'
+import { Outlet } from 'react-router-dom'
+import { useState } from 'react';
 
-function App() {
+export interface LoggedInType {
+  state: boolean;
+}
 
-  return (
+export interface LoggedInContext{
+  loggedIn: LoggedInType;
+  setLoggedIn: React.Dispatch<React.SetStateAction<{ state: boolean }>>;
+}
+
+export const App = () => {
+  
+  const [loggedIn, setLoggedIn] = useState({
+    state: sessionStorage.getItem('isLoggedInKey') === 'true'
+  } as LoggedInType);
+
+  return(
     <>
-      <NavBar/>
-      
-      <Link to={`/${paths.game}`}> testing </Link>
+      <div>
+        <Outlet context = {{loggedIn, setLoggedIn}}></Outlet>
+      </div>
     </>
   )
 }

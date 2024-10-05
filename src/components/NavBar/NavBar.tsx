@@ -1,10 +1,15 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
 import { paths } from "../../config/paths"
-import { LogInnn } from '../LogIn/LogIn'
+import { Login } from '../LogIn/LogIn/LogIn'
 import './NavBar.scss'
+import { LoggedInContext } from "../../App"
+
+
 export const NavBar = () => {
-    const isLoggedIn = true
+
+    const {loggedIn } = useOutletContext<LoggedInContext>();
+
     return (
         <Navbar expand = "lg" className = "custom-navbar">
             <Container fluid>
@@ -15,7 +20,7 @@ export const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
 
                     <Nav className="me-auto">
-                        {isLoggedIn && (
+                        {loggedIn.state && (
                             <Nav.Link as={Link} to={paths.game}>
                                 Play
                             </Nav.Link>
@@ -23,7 +28,7 @@ export const NavBar = () => {
                     </Nav>
                 </Navbar.Collapse>
                 <Navbar className="Toggle">
-                    <LogInnn />
+                    <Login />
                 </Navbar>
             </Container>
         </Navbar>

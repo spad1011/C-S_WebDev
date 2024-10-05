@@ -4,10 +4,8 @@ import Form from 'react-bootstrap/Form';
 import {  useFormContext } from 'react-hook-form';
 
 
-export const LogInFormmm = () => {
-    const {
-        register,
-    } = useFormContext();
+export const LogInForm = () => {
+    const { register } = useFormContext();
 
     return(
             <Stack direction='horizontal' gap={3}>
