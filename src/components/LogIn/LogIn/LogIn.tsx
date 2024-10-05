@@ -45,7 +45,6 @@ export const Login = () => {
     const logout = () => {
         setLoggedIn({state:false})
         setUName("")
-        reset()
     }
     
 
