@@ -1,0 +1,17 @@
+.icons {
+    transition: 300ms ease;
+}
+
+.icons:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.custom-stats{
+    font-size: xx-large;
+}
+
+.custom-svgs{
+    height: auto;
+    width: 60%;
+}

@@ -5,7 +5,7 @@ import { paths } from './config/paths.tsx'
 import App from './App.tsx';
 import './index.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import { Game } from './pages/game.tsx';
+import { Game } from './pages/Game/Game.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Start } from './components/Start/Start.tsx';
 
