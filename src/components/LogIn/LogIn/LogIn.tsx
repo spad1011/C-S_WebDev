@@ -6,7 +6,7 @@ import { useOutletContext } from "react-router-dom";
 import { LoggedInContext } from "../../../App";
 
 
-export interface Inputs {
+export interface FormValues {
     username: string
     password: string
 }
@@ -19,13 +19,12 @@ export const Login = () => {
     })*/
 
     const {loggedIn, setLoggedIn} = useOutletContext<LoggedInContext>();
-
     useEffect(()=> {
         sessionStorage.setItem("isLoggedInKey", loggedIn.state.toString());
     }, [loggedIn])
     
     const [uname, setUName] = useState<string>('')
-    const methods = useForm<Inputs>({
+    const methods = useForm<FormValues>({
         defaultValues: {
             username: '',
             password: '',
@@ -34,7 +33,7 @@ export const Login = () => {
 
     const {handleSubmit, reset} = methods
 
-    const login: SubmitHandler<Inputs> = (data) => {
+    const login: SubmitHandler<FormValues> = (data) => {
        // username: data.username
        // password: data.password
         setLoggedIn({state: true});
@@ -53,7 +52,7 @@ export const Login = () => {
             <FormProvider {...methods}>
                 <Form onSubmit={handleSubmit(login)}>
                     {!loggedIn.state && (<LogInForm/>)}
-                    <p> hello {uname}</p>
+                    <p>{uname}</p>
                 </Form>
                 {loggedIn.state && (
                     <Button
