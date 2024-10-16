@@ -1,5 +1,5 @@
-import './App.scss'
-import { Outlet } from 'react-router-dom'
+import './App.scss';
+import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 
 export interface LoggedInType {
@@ -11,20 +11,17 @@ export interface LoggedInContext{
   setLoggedIn: React.Dispatch<React.SetStateAction<{ state: boolean }>>;
 }
 
-export const App = () => {
-  
+export function App() {
   const [loggedIn, setLoggedIn] = useState({
-    state: sessionStorage.getItem('isLoggedInKey') === 'true'
+    state: sessionStorage.getItem('isLoggedInKey') === 'true',
   } as LoggedInType);
 
-  return(
-    <>
-      <div>
-        <Outlet context = {{loggedIn, setLoggedIn}}></Outlet>
-      </div>
-    </>
-  )
+  return (
+    <div>
+      <Outlet context={{ loggedIn, setLoggedIn }} />
+    </div>
+  );
 }
-//todo change typescript version
+// todo change typescript version
 
-export default App
+export default App;

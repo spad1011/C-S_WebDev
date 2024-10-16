@@ -1,4 +1,4 @@
 export const paths = {
-    root: '/',
-    game: 'game',
-}
+  root: '/',
+  game: 'game',
+};

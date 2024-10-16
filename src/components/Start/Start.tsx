@@ -1,8 +1,10 @@
-import { NavBar } from "../NavBar/NavBar"
+import { NavBar } from '../NavBar/NavBar.tsx';
 
-export const Start = () => (
+export function Start() {
+  return (
     <>
-        <NavBar/>
-        <h1>HELLO</h1>
+      <NavBar />
+      <h1>HELLO</h1>
     </>
-)
+  );
+}
