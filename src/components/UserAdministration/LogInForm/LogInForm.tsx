@@ -4,9 +4,11 @@ import { useFormContext } from 'react-hook-form';
 
 export function LogInForm() {
   const { register } = useFormContext();
+  // eslint-disable-next-line max-len
+  // register is used to extract value from Form element to be used for the SubmitHandler so that it can generate an object with the extracted values
 
   return (
-    <Stack direction="horizontal" gap={3}>
+    <Stack direction="horizontal" gap={2}>
       <Form.Control
         className="mr-1"
         type="text"
@@ -17,7 +19,7 @@ export function LogInForm() {
         })}
       />
       <Form.Control
-        className="mr-1"
+        className=""
         type="password"
         placeholder="Password"
         required

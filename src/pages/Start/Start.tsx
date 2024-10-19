@@ -1,4 +1,4 @@
-import { NavBar } from '../NavBar/NavBar.tsx';
+import { NavBar } from '../../components/NavBar/NavBar.tsx';
 
 export function Start() {
   return (

@@ -7,8 +7,9 @@ import App from './App.tsx';
 import './index.css';
 import { Game } from './pages/Game/Game.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Start } from './components/Start/Start.tsx';
+import { Start } from './pages/Start/Start.tsx';
 
+// create react-router BrowserRouter
 const router = createBrowserRouter([
   {
     path: paths.root,

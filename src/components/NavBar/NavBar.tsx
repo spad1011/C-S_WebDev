@@ -4,13 +4,14 @@ import {
 import { Link, useOutletContext } from 'react-router-dom';
 import { useState } from 'react';
 import { paths } from '../../config/paths.tsx';
-import { Login } from '../LogIn/LogIn/LogIn.tsx';
+import { Login } from '../UserAdministration/LogIn/LogIn.tsx';
 import './NavBar.scss';
 import { LoggedInContext } from '../../App.tsx';
-import { SignIn } from '../SignIn/SignIn.tsx';
+import { SignIn } from '../UserAdministration/SignIn/SignIn.tsx';
+import logo from '../../assets/rps_logo.png';
 
 export function NavBar() {
-  const { loggedIn } = useOutletContext<LoggedInContext>();
+  const { loggedIn } = useOutletContext<LoggedInContext>(); // retrieve global Variable from app.tsx
   const [showSignInModal, setSignInModalState] = useState<boolean>(false);
 
   const hideModal = () => {
@@ -22,14 +23,22 @@ export function NavBar() {
       <Navbar expand="lg" className="custom-navbar">
         <Container fluid>
           <Navbar.Brand as={Link} to={paths.root}>
-            Logo here
+            <img
+              src={logo}
+              alt="logo"
+              width="80"
+              height="80"
+              className="d-inline-block align-middle me-2"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-
             <Nav className="me-auto">
               {loggedIn.state && (
-              <Nav.Link as={Link} to={paths.game}>
+              <Nav.Link // pressing button while already on page causes error
+                as={Link}
+                to={paths.game}
+              >
                 Play
               </Nav.Link>
               )}
@@ -37,7 +46,7 @@ export function NavBar() {
           </Navbar.Collapse>
           <Navbar className="Toggle">
             <Login />
-            <Button onClick={() => setSignInModalState(true)}> Sign in</Button>
+            <Button className="ms-3" onClick={() => setSignInModalState(true)}> Sign in</Button>
           </Navbar>
         </Container>
       </Navbar>

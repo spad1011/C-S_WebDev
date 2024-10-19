@@ -2,6 +2,7 @@ import './App.scss';
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 
+// Setting up global Variable for multiple components (could be simplified(LOW PRIORITY))
 export interface LoggedInType {
   state: boolean;
 }
@@ -22,6 +23,5 @@ export function App() {
     </div>
   );
 }
-// todo change typescript version
 
 export default App;

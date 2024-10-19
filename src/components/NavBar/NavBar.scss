@@ -12,7 +12,7 @@
         &:hover,
         &:focus {
             // Farbe beim Hover und Focus
-            color: $blue-400; // Blue 400 von Figma
+            color: $blue-400; 
         }
 
         &:active {
@@ -21,11 +21,8 @@
     }
 }
 
-body[data-bs-theme='dark'] .custom-navbar{
-    color: $white
-}
 
-body:not([data-bs-theme='dark']) .custom-navbar {
+.custom-navbar {
     color: $black;
     background-color: $blue-900;
 
