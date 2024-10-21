@@ -2,5 +2,5 @@
 .idea/*
 scripts/*
 node_modules/*
-
+dist/
 .eslintrc.cjs
